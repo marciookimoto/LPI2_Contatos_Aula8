@@ -66,7 +66,7 @@ public class PessoaDAO {
     }
 
     public void atualizar(int id, Pessoa pessoa) {
-        String sql = "UPDATE contatos SET nome=?, dataNascimento = ?, telefone = ?, email=?, tipo=?, preferencia=? WHERE id = ?";
+        String sql = "UPDATE contatos SET nome=?, dataNascimento = ?, telefone = ?, email=?, tipo_id=?, preferencia=? WHERE id = ?";
         try (Connection conn = ConexaoBanco.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, pessoa.getNome());
